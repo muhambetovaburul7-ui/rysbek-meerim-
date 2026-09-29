@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Рысбек & Мээрим</title>
+
+  <meta name="description" content="Үйлөнүү тоюна чакыруу — Рысбек & Мээрим">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f8f5f0;
+      color: #2f2925;
+      overflow-x: hidden;
+    }
+
+    section {
+      width: 100%;
+      position: relative;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(
+          rgba(35, 28, 24, 0.28),
+          rgba(35, 28, 24, 0.38)
+        ),
+        url("hero.jpg") center / cover no-repeat;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      animation: fadeUp 1.5s ease;
+      max-width: 700px;
+    }
+
+    .small-title {
+      font-size: 14px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 14vw, 110px);
+      font-weight: 400;
+      line-height: 0.95;
+      margin-bottom: 25px;
+    }
+
+    .hero .amp {
+      font-size: 0.45em;
+      font-style: italic;
+      margin: 0 10px;
+    }
+
+    .hero-date {
+      font-size: 20px;
+      letter-spacing: 5px;
+      margin-top: 25px;
+    }
+
+    .scroll {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      letter-spacing: 3px;
+      opacity: 0.85;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 90px 25px;
+      text-align: center;
+      background: #f8f5f0;
+    }
+
+    .intro-inner {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .ornament {
+      font-size: 25px;
+      margin-bottom: 25px;
+      color: #9a806d;
+    }
+
+    .intro h2 {
+      font-size: 38px;
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+
+    .intro p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #655b54;
+    }
+
+    /* NAMES */
+
+    .names {
+      padding: 80px 20px;
+      text-align: center;
+      background: #eee7df;
+    }
+
+    .names h2 {
+      font-size: clamp(42px, 11vw, 80px);
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .names .heart {
+      display: block;
+      font-size: 25px;
+      margin: 25px 0;
+      color: #9b6d60;
+    }
+
+    /* DATE */
+
+    .date-section {
+      padding: 100px 20px;
+      text-align: center;
+      background: #f8f5f0;
+    }
+
+    .date-section h2 {
+      font-size: 20px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-bottom: 35px;
+    }
+
+    .date-number {
+      font-size: clamp(70px, 18vw, 130px);
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .month {
+      font-size: 25px;
+      letter-spacing: 7px;
+      margin-top: 20px;
+      text-transform: uppercase;
+    }
+
+    .weekday {
+      margin-top: 15px;
+      color: #756960;
+      font-size: 17px;
+    }
+
+    /* INFO */
+
+    .info {
+      padding: 80px 20px;
+      background: #eee7df;
+    }
+
+    .info-grid {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .info-card {
+      background: rgba(255,255,255,0.55);
+      padding: 40px 25px;
+      text-align: center;
+      border-radius: 2px;
+    }
+
+    .info-icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .info-card h3 {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .info-card p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #665d56;
+    }
+
+    /* PROGRAM */
+
+    .program {
+      padding: 90px 20px;
+      background: #f8f5f0;
+      text-align: center;
+    }
+
+    .program h2 {
+      font-size: 38px;
+      font-weight: 400;
+      margin-bottom: 55px;
+    }
+
+    .timeline {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 30px;
+      padding: 25px 0;
+      border-bottom: 1px solid #d8cec5;
+    }
+
+    .time {
+      min-width: 70px;
+      font-size: 19px;
+      color: #8d7565;
+    }
+
+    .event h3 {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    .event p {
+      color: #716760;
+      line-height: 1.5;
+    }
+
+    /* INVITATION */
+
+    .invitation {
+      padding: 100px 25px;
+      text-align: center;
+      background: #2f2925;
+      color: #f8f5f0;
+    }
+
+    .invitation-inner {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .invitation h2 {
+      font-size: 42px;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+
+    .invitation p {
+      font-size: 18px;
+      line-height: 1.9;
+      color: #ddd3ca;
+    }
+
+    /* PARENTS */
+
+    .parents {
+      padding: 80px 20px;
+      text-align: center;
+      background: #eee7df;
+    }
+
+    .parents h2 {
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+
+    .parents p {
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    /* RSVP */
+
+    .rsvp {
+      padding: 90px 20px;
+      text-align: center;
+      background: #f8f5f0;
+    }
+
+    .rsvp h2 {
+      font-size: 38px;
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+
+    .rsvp p {
+      color: #6c625a;
+      line-height: 1.7;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 17px 35px;
+      border: 1px solid #806b5e;
+      color: #443a34;
+      text-decoration: none;
+      font-size: 16px;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #443a34;
+      color: white;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 60px 20px;
+      text-align: center;
+      background: #2f2925;
+      color: #f8f5f0;
+    }
+
+    footer h2 {
+      font-size: 40px;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      color: #cfc3ba;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+
+      .hero {
+        min-height: 100svh;
+      }
+
+      .hero h1 {
+        font-size: 62px;
+      }
+
+      .hero-date {
+        font-size: 16px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro {
+        padding: 70px 20px;
+      }
+
+      .intro h2 {
+        font-size: 32px;
+      }
+
+      .program {
+        padding: 70px 20px;
+      }
+
+      .timeline-item {
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="small-title">
+        Үйлөнүү тоюна чакыруу
+      </div>
+
+      <h1>
+        Рысбек
+        <span class="amp">&</span>
+        Мээрим
+      </h1>
+
+      <div class="hero-date">
+        26 • 10 • 2026
+      </div>
+
+    </div>
+
+    <div class="scroll">
+      ТӨМӨН КАРАЙ
+    </div>
+
+  </section>
+
+
+  <!-- INTRO -->
+
+  <section class="intro">
+
+    <div class="intro-inner">
+
+      <div class="ornament">✦</div>
+
+      <h2>
+        Биздин өзгөчө күнүбүз
+      </h2>
+
+      <p>
+        Урматтуу туугандар, жакындар жана достор!
+        Сиздерди биздин жашообуздагы эң маанилүү
+        жана бактылуу күнгө күбө болууга чакырабыз.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- NAMES -->
+
+  <section class="names">
+
+    <h2>
+      Рысбек
+      <span class="heart">♡</span>
+      Мээрим
+    </h2>
+
+  </section>
+
+
+  <!-- DATE -->
+
+  <section class="date-section">
+
+    <h2>
+      Тоюбуздун күнү
+    </h2>
+
+    <div class="date-number">
+      26
+    </div>
+
+    <div class="month">
+      Октябрь
+    </div>
+
+    <div class="weekday">
+      2026-жыл
+    </div>
+
+  </section>
+
+
+  <!-- INFO -->
+
+  <section class="info">
+
+    <div class="info-grid">
+
+      <div class="info-card">
+
+        <div class="info-icon">♡</div>
+
+        <h3>
+          Күнү
+        </h3>
+
+        <p>
+          26-октябрь<br>
+          2026-жыл
+        </p>
+
+      </div>
+
+
+      <div class="info-card">
+
+        <div class="info-icon">⌖</div>
+
+        <h3>
+          Дареги
+        </h3>
+
+        <p>
+          «Тумар» рестораны
+        </p>
+
+      </div>
+
+
+      <div class="info-card">
+
+        <div class="info-icon">◷</div>
+
+        <h3>
+          Убактысы
+        </h3>
+
+        <p>
+          Саат 16:00
+        </p>
+
+      </div>
+
+
+      <div class="info-card">
+
+        <div class="info-icon">✦</div>
+
+        <h3>
+          Dress Code
+        </h3>
+
+        <p>
+          Майрамдык жана жарашыктуу кийим
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROGRAM -->
+
+  <section class="program">
+
+    <h2>
+      Майрамдык программа
+    </h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+
+        <div class="time">
+          16:00
+        </div>
+
+        <div class="event">
+
+          <h3>
+            Конокторду тосуп алуу
+          </h3>
+
+          <p>
+            Коноктордун келиши жана жылуу жолугушуу.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="time">
+          17:00
+        </div>
+
+        <div class="event">
+
+          <h3>
+            Тойдун башталышы
+          </h3>
+
+          <p>
+            Майрамдык салтанат.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="time">
+          18:00
+        </div>
+
+        <div class="event">
+
+          <h3>
+            Майрам
+          </h3>
+
+          <p>
+            Ыр-бий, жакшы каалоолор жана жагымдуу көз ирмемдер.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INVITATION -->
+
+  <section class="invitation">
+
+    <div class="invitation-inner">
+
+      <h2>
+        Сиздерди күтөбүз!
+      </h2>
+
+      <p>
+        Бул өзгөчө күнүбүздө сиздердин катышууңуздар
+        биз үчүн чоң кубаныч жана сыймык болот.
+        Келип, бактыбызга ортоктош болуп,
+        биз менен бирге бул күндү эстен кеткис кылыңыздар.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- PARENTS -->
+
+  <section class="parents">
+
+    <h2>
+      Урматтоо менен
+    </h2>
+
+    <p>
+      Мухамбетказы & Раш
+      <br><br>
+      жана эки жаштын жакындары
+    </p>
+
+  </section>
+
+
+  <!-- RSVP -->
+
+  <section class="rsvp">
+
+    <h2>
+      Сизди күтөбүз
+    </h2>
+
+    <p>
+      Тойго катышаарыңызды алдын ала билдирип коюуңузду өтүнөбүз.
+    </p>
+
+    <a
+      class="button"
+      href="tel:+996000000000"
+    >
+      БАЙЛАНЫШУУ
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h2>
+      Рысбек & Мээрим
+    </h2>
+
+    <p>
+      26 • 10 • 2026
+    </p>
+
+  </footer>
+
+</body>
+</html>
